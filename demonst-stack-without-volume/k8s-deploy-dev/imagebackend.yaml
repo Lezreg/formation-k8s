@@ -1,49 +1,42 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: redis
+  name: imagebackend
   labels:
     app: monsterstack
-    partie: redis
+    partie: imagebackend
 spec:
   ports:
     - port: 8080
   selector:
     app: monsterstack
-    partie: redis
+    partie: imagebackend
   type: ClusterIP
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: redis
+  name: imagebackend
   labels:
     app: monsterstack
-    partie: redis
+    partie: imagebackend
 spec:
   selector:
     matchLabels:
       app: monsterstack
-      partie: redis
+      partie: imagebackend
   strategy:
     type: Recreate
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       labels:
         app: monsterstack
-        partie: redis
+        partie: imagebackend
     spec:
       containers:
-        - image: redis:latest
-          name: redis
+        - image: amouat/dnmonster:1.0
+          name: imagebackend
           ports:
-            - containerPort: 6379
-              name: redis
-          volumeMounts:
-            - name: redis-data
-              mountPath: /data
-      volumes:
-      - name: redis-data
-        persistentVolumeClaim:
-          claimName: redis-data
+            - containerPort: 8080
+              name: imagebackend
