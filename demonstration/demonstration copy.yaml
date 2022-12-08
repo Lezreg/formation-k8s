@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demonstration
+  labels:
+    nom-app: demonstration
+spec:
+  selector:
+    matchLabels:
+      nom-app: demonstration
+  replicas: 1
+  strategy:
+    type: Recreate
+  
+  template:
+    metadata:
+      labels:
+        nom-app: demonstration
+    spec:
+      containers:
+        - image: monachus/rancher-demo:latest
+          name : rancher-demo
+          ports:
+            - containerPort: 8080

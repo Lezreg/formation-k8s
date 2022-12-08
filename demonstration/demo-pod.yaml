@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rancher-demo-pod
+  labels:
+    app: rancher-demo2
+    autrelabels: test
+spec:
+  containers:
+    - image: monachus/rancher-demo:latest
+      name: rancher-demo-container
+      ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+    - image: redis
+      name: redis-container
+      ports:
+        - containerPort: 6379
+          name: http
+          protocol: TCP
