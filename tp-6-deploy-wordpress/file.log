@@ -1,0 +1,129 @@
+    1  docker exec -it 9fdabe694038  /bin/bash
+    2  docker ps
+    3  docker exec -it 8ee1ff45d417  /bin/bash
+    4  clear
+    5  docker run -d -p 5001:5000 microblog
+    6  docker login
+    7  docker tag microblog:latest  rlezreg/micrblog
+    8  docker tag microblog:latest  rlezreg/microblog
+    9  docker push  rlezreg/microblog
+   10  docker build -t microblog
+   11  docker run microblog
+   12  docker images
+   13  docker run microblog .
+   14  docker build -t microblog .
+   15  docker run microblog
+   16  docker ps
+   17  docker build -t microblog .
+   18  docker run microblog
+   19  docker build -t microblog .
+   20  docker image ls
+   21  docker build -t microblog .
+   22  docker image ls
+   23  docker ps
+   24  docker run -p 5000:5000 microblog
+   25  docker build -t microblog-slim
+   26  docker build -t microblog-slim .
+   27  docker build -t microblog:slim .
+   28  docker ps -a
+   29  docker images
+   30  docker build -t microblog:slim .
+   31  docker run -p 5000:5000 microblog /bin/sh
+   32  docker run -it  microblog /bin/sh
+   33  docker build -t identidock .
+   34  docker-compose up
+   35  docker-compose up -d
+   36  docker-compose down
+   37  docker-compose ps
+   38  docker-compose ps -a
+   39  docker-compose
+   40  docker-compose up -d
+   41  docker-compose down
+   42  docker-compose up -d
+   43  docker network 
+   44  docker network ls
+   45  docker-compose down
+   46  docker network ls
+   47  docker-compose down
+   48  docker-compose up -d
+   49  docker-compose ps
+   50  docker logs identidock_redis_1
+   51  docker-compose down
+   52  docker-compose up
+   53  docker-compose down
+   54  docker logs identidock_redis_1 | grep 'cache miss'
+   55  docker-compose ps
+   56  docker-compose up -d
+   57  docker logs identidock_redis_1 | grep 'cache miss'
+   58  docker logs identidock_redis_1
+   59  docker logs identidock_redis_1 | grep 'WARNING'
+   60  docker logs identidock_identidock_1 | grep 'cache miss'
+   61  docker logs identidock_identidock_1| grep 'cache miss'
+   62  docker logs identidock_identidock_1 | grep 'cache miss' | less 
+   63  !
+   64  docker logs identidock_identidock_1 | grep 'cache miss' | tail -n
+   65  docker-compose ps
+   66  docker logs identidock_dnmonstre_1 | grep 'cache miss'
+   67  docker logs identidock_identidock_1 | grep 'cache miss' | tail --n
+   68  docker logs identidock_identidock_1 | grep 'cache miss'
+   69  docker logs identidock_identidock_1
+   70  curl -L -O https://raw.githubusercontent.com/elastic/beats/7.10/deploy/docker/filebeat.docker.yml
+   71  mv filebeat.docker.yml filebeat.yml
+   72  sudo chown root filebeat.yml
+   73  sudo chmod go-w filebeat.yml
+   74  docker-compose ps
+   75  docker-compose up -d
+   76  kubectl apply -f demo-pod.yaml
+   77  clear
+   78  kubectl apply -f demonstration.yaml
+   79  kubectl get pods
+   80  kubectl get service
+   81  kubectl delete  service demo-service
+   82  kubectl apply -f demonstration.yaml
+   83  exec kubectl attach -i -t -n default imagebackend-ff894ff79-hs76b -c imagebackend
+   84  exec kubectl exec -i -t -n default redis-6bd4864cc5-dg9tg -c redis -- sh -c "clear; (bash || ash || sh)"
+   85  git clone -b tp_monsterstack_base https://github.com/Uptime-Formation/corrections_tp.git
+   86  minikube stop
+   87  kubectl apply -f k8s-deploy-dev/
+   88  kubectl apply -f k8s-deploy-dev
+   89  kubectl get node
+   90  kubectl get node
+   91  docker build -t rlezreg/front-end
+   92  docker build -t rlezreg/front-end . 
+   93  docker push  rlezreg/front-end 
+   94  kubectl apply -f k8s-deploy-dev/
+   95  docker build -t rlezreg/frontend . 
+   96  docker push  rlezreg/frontend 
+   97  kubectl apply -f k8s-deploy-dev/
+   98  env | grep DOCKER
+   99  curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64 && sudo install skaffold /usr/local/bin/
+  100  skaffold dev --tail=false
+  101  kubectl apply -f k8s-deploy-dev/
+  102  kubectl exec nginx-ingress-controller grep -A 5 foo /etc/nginx/nginx.conf
+  103  kubectl exec nginx-ingress-controller grep -A 5 frontend /etc/nginx/nginx.conf
+  104  kubectl exec nginx-ingress-controller grep frontend /etc/nginx/nginx.conf
+  105  kubectl exec nginx-ingress-controller cat  /etc/nginx/nginx.conf
+  106  clear
+  107  kubectl exec nginx-ingress-controller grep -A 5 frontend /etc/nginx/nginx.conf
+  108  kubectl exec nginx-ingress-controller grep frontend /etc/nginx/nginx.conf
+  109  kubectl exec -ingress-controller  grep -A 5 frontend /etc/nginx/nginx.conf
+  110  kubectl exec -ingress-controller  grep frontend /etc/nginx/nginx.conf
+  111  kubectl exec -it ingress-controller
+  112  clear
+  113  skaffold dev --tail=false
+  114  kubectl stop -f k8s-deploy-dev/
+  115  clear
+  116  skaffold dev --tail=false
+  117  skaffold run
+  118  kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.0/deploy/static/provider/cloud/deploy.yaml
+  119  kubectl get svc -n ingress-nginx ingress-nginx-controller
+  120  helm install wordpress-tp bitnami/wordpress
+  121  helm repo add my-repo https://charts.bitnami.com/bitnami
+  122  helm install my-wordpress my-repo/wordpress
+  123  helm uninstall my-wordpress
+  124  helm template wordpress-tp bitnami/wordpress --values=values.yaml > wordpress-tp-manifests.yaml
+  125  helm template my-wordpress bitnami/wordpress --values=values.yaml > wordpress-tp-manifests.yaml
+  126  helm repo add my-repo https://charts.bitnami.com/bitnami
+  127  helm template wordpress-tp bitnami/wordpress --values=values.yaml > wordpress-tp-manifests.yaml
+  128* helm template wordpress-tp bitnami/wordpress --values=values.yaml > wordpress-tp-manifests.yaml
+  129  history > file.log
